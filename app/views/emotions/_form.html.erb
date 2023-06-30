@@ -1,0 +1,23 @@
+<%= form_with(model: emotion, local: true) do |f| %>
+  <div class="emotion__status">
+    <div class="form__group">
+      <%= f.label :"どんなことがあったのか簡単に書いてみよう", class: "form__label" %>
+      <%= f.text_field :event_occurred, placeholder: "例)クラスメイトに笑われた", class: "form__event" %>
+    </div>
+    <div class="form__group">
+      <%= f.label :"具体的な内容と自分の気持ちを書いてみよう", class: "form__label" %>
+      <%= f.text_area :specific_details, placeholder: "例)授業中に手を挙げて答えたら間違えていて・・・笑われて悔しい気持ちになった", class: "form__specific" %>
+    </div>
+    <div class="form__group">
+      <%= f.label :"▼内容を読み返して、次のどちらがしっくりくる？", class: "form__label" %>
+      <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class: "category-box", id: "emotion-category"}) %>
+    </div>
+    <div class="form__group">
+      <%= f.label :"この出来事によってどのくらい辛かったか1~100の間で点数にしてみよう", class: "form__label" %>
+      <%= f.text_area :unpleasant_index, placeholder: "例)88", class: "form__unpleasant" %>点
+    </div>
+    <div class="form__group">
+      <%= f.submit "これからどうするかを決める▶︎", class: "form__submit" %>
+    </div>
+  </div>
+<% end %>
