@@ -1,12 +1,23 @@
 <main class="main">
   <div class="inner">
   <div class="start__btn">
-   <%= link_to "今の気持ちを書いてみる", new_emotion_path, class: "nav__emo" %>
+  <% if user_signed_in? %>
+   <%= link_to "今の気持ちを書いてみる", new_emotion_path, class: "nav__emo"%>
+  <% else %>
+  <%= link_to "今の気持ちを書いてみる", new_user_session_path, class: "nav__emo"%>
+  <% end %>
   </div>
     <%# ログインしているときは以下を表示する %>
     <% if user_signed_in? %>
       <div class="greeting">
-
+      <% if current_user.emotions.present? %>
+      <%= link_to "今#{current_user.nickname}さんがトライしていること", emotions_path(current_user.emotions.last) %>
+    <% end %>
+    <%# if current_user.actions.present? %>
+      <%#= link_to "最新のAction", action_path(current_user.actions.last) %>
+    <%# end %>
+    </div>
+    <div class="greeting">
       <%="#{current_user.nickname}さんが乗り越えてきたもの"%>
         <%# = link_to "#{current_user.nickname}さん", user_path(current_user), class: :greeting__link%>
        </div>

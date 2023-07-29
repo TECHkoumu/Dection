@@ -1,0 +1,15 @@
+<%= form_with(model: @action, local: true) do |f| %>
+  <div class="emotion__status">
+    <div class="form__group">
+      <%= f.label :"これからどんなアクションができるか書き出してみよう", class: "form__label" %>
+      <%= f.text_area :event_occurred, placeholder: "例)・毎朝5分瞑想する。・毎晩メモ書きをする。・小旅行に行く。・海に行って叫ぶ。", class: "form__specific" %>
+    </div>
+    <div class="form__group">
+      <%= f.label :"書き出した内容からアクションを一つ決めよう", class: "form__label" %>
+      <%= f.text_field :specific_details, placeholder: "例)毎朝5分瞑想をする。", class: "form__label_act" %>
+    </div>
+    <div class="form__group">
+      <%= f.submit "このアクションプランでトライしてみる", class: "form__submit" %>
+    </div>
+  </div>
+<% end %>

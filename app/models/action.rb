@@ -8,6 +8,6 @@ class Action < ApplicationRecord
   validates :plan, presence: true
   validates :target_score, presence: true
   validates :current_score, presence: true
-  validates :total_score
+  # validates :total_score
 
 end
