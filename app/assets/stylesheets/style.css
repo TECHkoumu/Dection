@@ -141,6 +141,18 @@
   margin-left: 40px;
 }
 
+.container_act{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 36px;
+  color: rgb(0, 128, 87);
+  background-color: rgb(213, 242, 213);
+  border: 1px green solid;
+}
+
+
 .form__group {
   margin-bottom: 20px;
 }
@@ -153,6 +165,27 @@
   font-size: 18px;
   margin-bottom: 5px;
 }
+
+.your_emotion{
+  margin-left: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.your_emotion h2{
+  border: 1px orange solid;
+  display: inline-block;
+  padding: 5px;
+  width: fit-content;
+
+}
+
+.form__label_act {
+  width: 50%;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
 
 .form__event {
   width: 50%;

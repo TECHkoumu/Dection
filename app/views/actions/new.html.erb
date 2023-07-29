@@ -1,0 +1,14 @@
+<div class="contents row">
+  <div class="container">
+    <div class="container_act">
+      <h3>これからどうするか</h3>
+    </div>
+    <div class="your_emotion">
+      <h1>前ページで書き出した気持ち</h1>
+      <h2><%= @emotion.event_occurred %></h2>
+      <h2><%= @emotion.specific_details %></h2>
+    </div>
+    <%= render partial:"form",locals:{emotion: @emotion}%>
+    <%#localsでテンプレ内の変数=emotionに呼び出し元で定義した変数=@emotionが使える%>
+  </div>
+</div>
